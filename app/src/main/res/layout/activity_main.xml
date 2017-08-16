@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.carwashclient.ui.MainActivity">
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/bt_ceshi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="提交测试!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <!--展示界面-->
+    <FrameLayout
+        android:id="@+id/fl_main_show_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <!--底部导航-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
 
+        <android.support.v4.app.FragmentTabHost
+            android:id="@+id/ftab_main_bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/iv_main_click"
+            android:src="@drawable/tab_icon_selector"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+    </FrameLayout>
 </LinearLayout>
