@@ -42,12 +42,10 @@ public class MainActivity extends AppCompatActivity {
         mFtabMainBottomLayout.setup(this, getSupportFragmentManager(), R.id.fl_main_show_layout);
         MainTabs[] tabses = MainTabs.values();
         for (int i = 0; i < tabses.length; i++) {
-
             Bundle args = new Bundle();
             args.putString("point", i + "");
             addTab(tabses[i], args, i);
         }
-
         //去掉分隔线
         mFtabMainBottomLayout.getTabWidget().setDividerDrawable(null);
     }
@@ -56,31 +54,26 @@ public class MainActivity extends AppCompatActivity {
         TabHost.TabSpec tabspac = mFtabMainBottomLayout.newTabSpec(tabse.mTag);// 复用
         //设置显示的view
         View view = View.inflate(this, R.layout.tab_indicator, null);
-
         //动态的设置文字
         TextView title = (TextView) view.findViewById(R.id.tab_title);
         title.setText(tabse.mTitle);
         //动态的设置图片
         ImageView icon = (ImageView) view.findViewById(R.id.iv_icon);
         icon.setImageResource(tabse.mImage);
-
-
         //在第三个位置的时候不显示
         if (point == 2) {
             view.setVisibility(View.INVISIBLE);
         }
-
         tabspac.setIndicator(view);
-
         Class<?> clss = tabse.mClss;
         mFtabMainBottomLayout.addTab(tabspac, clss, args);
     }
 
     @OnClick(R.id.iv_main_click)
     public void onViewClicked() {
-        Intent intent=new Intent(this,ServiceActivity.class);
+        Intent intent = new Intent(this, ServiceActivity.class);
         startActivity(intent);
-        this.overridePendingTransition(R.anim.slide_bottom_in,0);
+        this.overridePendingTransition(R.anim.slide_bottom_in, 0);
     }
 
     /**

@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".ui.act.ServiceActivity">
         </activity>
+        <activity android:name=".ui.act.ShowActivity">
+        </activity>
     </application>
 
 </manifest>

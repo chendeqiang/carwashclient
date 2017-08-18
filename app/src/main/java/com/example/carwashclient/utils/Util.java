@@ -1,6 +1,10 @@
 package com.example.carwashclient.utils;
 
+import android.content.res.Resources;
+
 import com.example.carwashclient.gloab.MyApplication;
+
+import static com.example.carwashclient.gloab.MyApplication.context;
 
 /**
  * 作者：Created by chendeqiang on 2017/8/15
@@ -14,8 +18,13 @@ public class Util {
         MyApplication.mainHandler.post(runnable);
     }
 
-    //这是个子线程
-    public static void runOnChildThread(Runnable runnable) {
-        new Thread(runnable).start();
+    //得到字符串数组信息
+    public static String[] getStringArray(int resId) {
+        //getResources:R
+        return getResources().getStringArray(resId);
+    }
+    //得到资源管理的类
+    public static Resources getResources() {
+        return context.getResources();
     }
 }

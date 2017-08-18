@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CarWashClient</string>
+    <string name="error_view_loading">加载中…</string>
+    <string-array name="order_tab_names">
+        <item>已完成订单</item>
+        <item>未完成订单</item>
+    </string-array>
 </resources>
